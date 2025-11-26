@@ -899,7 +899,7 @@ def get_nataband_readings(mother_id):
 # ============ Dashboard Routes ============
 @app.route('/api/dashboard/stats', methods=['GET'])
 @token_required
-@role_required(['phc_admin', 'phc_staff'])
+@role_required(['phc_admin', 'chw', 'phc_staff'])
 def get_dashboard_stats():
     try:
         with get_db_connection() as conn:
